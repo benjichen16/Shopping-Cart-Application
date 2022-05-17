@@ -1,0 +1,27 @@
+.App {
+  text-align: left;
+  color: #4c4a37;
+  font-family: "Source Sans Pro", sans-serif;
+  font-size: 18px;
+  line-height: 32px;
+  margin: 20px;
+}
+.Product {
+  text0-align: left;
+  color: #e586b4;
+  font-family: "Source Sans Pro", sans-serif;
+  font-size: 18px;
+  line-height: 32px;
+  margin: 20px;
+}
+h1 {
+  color: #7c795d;
+  font-family: "Trocchi", serif;
+  font-size: 45px;
+  font-weight: normal;
+  line-height: 48px;
+  margin: 0;
+}
+* {
+  background-color: rgb(240, 219, 146);
+}
