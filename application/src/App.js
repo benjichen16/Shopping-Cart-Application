@@ -314,7 +314,7 @@ function ProductPage() {
           routeChange();
         }}
       >
-        Go home
+        &#8592; Go home
       </button>
       <ProductDetail />
       <DeleteProduct />
@@ -335,7 +335,7 @@ function CategoriesPage() {
           routeChange();
         }}
       >
-        Go home
+        &#8592; Go home
       </button>
       <Category />
       <h1> Add a New Product</h1>
