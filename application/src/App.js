@@ -81,7 +81,9 @@ function Categories() {
   return data.allCategories.map((category) => (
     <div>
       <dt>
-        <Link to={category.id}>{category.name}</Link>
+        <Link className="link" to={category.id}>
+          {category.name} &#8594;
+        </Link>
       </dt>
       <dd>-{category.description}</dd>
     </div>
@@ -102,7 +104,9 @@ function Category() {
       <ul>
         {data.Category.Products.map((product) => (
           <li>
-            <Link to={product.id}>{product.name}</Link>
+            <Link class="link" to={product.id}>
+              {product.name} &#8594;
+            </Link>
           </li>
         ))}
       </ul>
@@ -116,9 +120,9 @@ function ProductDetail() {
     variables: { productId: id },
   });
 
-  const [changeStock] = useMutation(UPDATE_STOCK);
+  const [changeStock, { mloading }] = useMutation(UPDATE_STOCK);
 
-  if (loading) return <p>Loading...</p>;
+  if (mloading || loading) return <p>Loading...</p>;
   if (error) return <p>Error</p>;
   return (
     <div>
@@ -188,6 +192,7 @@ function DeleteProduct() {
           });
           setTimeout(() => {}, 2000);
           routeChange();
+          window.alert("Successfully deleted product!");
           window.location.reload();
         }
       }}
@@ -275,6 +280,7 @@ function NewProductForm() {
           required
         />
       </label>
+
       <label>
         Product Price:
         <input
@@ -295,18 +301,42 @@ function NewProductForm() {
   );
 }
 function ProductPage() {
+  let navigate = useNavigate();
+  const routeChange = () => {
+    let path = `/`;
+    navigate(path);
+  };
   return (
     <div className="Product">
-      <Link to="/">Go home</Link>
+      <button
+        className="offset"
+        onClick={(e) => {
+          routeChange();
+        }}
+      >
+        Go home
+      </button>
       <ProductDetail />
       <DeleteProduct />
     </div>
   );
 }
 function CategoriesPage() {
+  let navigate = useNavigate();
+  const routeChange = () => {
+    let path = `/`;
+    navigate(path);
+  };
   return (
     <div className="Product">
-      <Link to="/">Go back</Link>
+      <button
+        className="offset"
+        onClick={(e) => {
+          routeChange();
+        }}
+      >
+        Go home
+      </button>
       <Category />
       <h1> Add a New Product</h1>
       <NewProductForm />

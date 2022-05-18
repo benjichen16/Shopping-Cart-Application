@@ -1,7 +1,7 @@
 .App {
   text-align: left;
-  color: #4c4a37;
-  font-family: "Source Sans Pro", sans-serif;
+  color: #e586b4;
+  font-family: "Haas Grot Text R Web", "Helvetica Neue", Helvetica, Arial;
   font-size: 18px;
   line-height: 32px;
   margin: 20px;
@@ -10,14 +10,14 @@
 .Product {
   text-align: left;
   color: #e586b4;
-  font-family: "Source Sans Pro", sans-serif;
+  font-family: "Haas Grot Text R Web", "Helvetica Neue", Helvetica, Arial;
   font-size: 18px;
   line-height: 32px;
   margin: 20px;
 }
 h1 {
-  color: #7c795d;
-  font-family: "Trocchi", serif;
+  color: #ffffff;
+  font-family: "Haas Grot Text R Web", "Helvetica Neue", Helvetica, Arial;
   font-size: 45px;
   font-weight: normal;
   line-height: 48px;
@@ -40,6 +40,7 @@ h1 {
   list-style: none;
   margin: 0;
   outline: none;
+  margin-top: 10px;
   padding: 10px 16px;
   position: relative;
   text-align: center;
@@ -86,12 +87,33 @@ h1 {
 .button-2:focus {
   background-color: #ff0000;
 }
+.offset {
+  background-color: #f082ac;
+  box-shadow: 0.3em 0.3em 0 0 var(--color), inset 0.3em 0.3em 0 0 var(--color);
+}
+.offset:hover,
+.offset:focus {
+  background-color: #f082ac;
+  box-shadow: 0 0 0 0 var(--hover), inset 6em 3.5em 0 0 var(--hover);
+}
 .textbox {
-  border: 1px dotted #000000;
+  border: 1px dotted #ffffff;
   outline: 0;
   height: 25px;
   width: 275px;
 }
+.link {
+  height: 30px;
+  color: rgb(255, 255, 255);
+  text-decoration: none;
+}
+form input,
+form select,
+form textarea {
+  display: block;
+  color: rgb(255, 255, 255);
+}
 * {
-  background-color: rgb(240, 219, 146);
+  background-color: rgb(0, 0, 0);
+  font-family: "Haas Grot Text R Web", "Helvetica Neue", Helvetica, Arial;
 }
