@@ -104,7 +104,7 @@ function Category() {
       <ul>
         {data.Category.Products.map((product) => (
           <li>
-            <Link class="link" to={product.id}>
+            <Link className="link" to={product.id}>
               {product.name} &#8594;
             </Link>
           </li>
