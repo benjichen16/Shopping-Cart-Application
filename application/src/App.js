@@ -137,7 +137,7 @@ function ProductDetail() {
                 stock: data.Product.stock + 1,
               },
             });
-            setTimeout(() => {}, 10000);
+            setTimeout(() => {}, 3000);
             window.location.reload();
           }}
         >
@@ -153,7 +153,7 @@ function ProductDetail() {
                 stock: data.Product.stock - 1,
               },
             });
-            setTimeout(() => {}, 10000);
+            setTimeout(() => {}, 3000);
             window.location.reload();
           }}
         >
@@ -186,6 +186,7 @@ function DeleteProduct() {
           deleteProduct({
             variables: { removeProductId: id },
           });
+          setTimeout(() => {}, 2000);
           routeChange();
           window.location.reload();
         }
@@ -202,7 +203,7 @@ function NewProductForm() {
   const [stock, setStock] = useState("");
   const [price, setPrice] = useState("");
   const { id } = useParams();
-  const [addProduct, { data, loading, error }] = useMutation(ADD_PRODUCT);
+  const [addProduct, { loading, error }] = useMutation(ADD_PRODUCT);
   if (loading) return "Submitting...";
   if (error) return `Submission error! ${error.message}`;
   return (
@@ -224,6 +225,9 @@ function NewProductForm() {
         setColor("");
         setStock("");
         setPrice("");
+        setTimeout(() => {}, 2000);
+        window.location.reload();
+        window.alert("Successfully added new product!");
       }}
     >
       <label>
@@ -278,7 +282,7 @@ function NewProductForm() {
           value={price}
           placeholder="Please enter a decimal number"
           onChange={(e) => {
-            const re = /[+-]?\d+(?:[.,]\d+)?/;
+            const re = /[-+]?([0-9]*\.[0-9]+|[0-9]+)/;
             if (e.target.value === "" || re.test(e.target.value)) {
               setPrice(e.target.value);
             }
