@@ -346,7 +346,7 @@ function CategoriesPage() {
 function Homepage() {
   return (
     <div className="App">
-      <h1>Cyral Depot</h1>
+      <h1>Shopping Depot</h1>
       <dl>
         <Categories />
       </dl>
